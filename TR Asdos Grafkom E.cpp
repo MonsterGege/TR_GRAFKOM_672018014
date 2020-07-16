@@ -18,9 +18,24 @@ void init(void)
 	glEnable(GL_DEPTH_TEST);
 	is_depth = 1;
 	glMatrixMode(GL_MODELVIEW);
+	glViewport(0.0,0.0,800,500);
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
+
+void jendelakiri(void)
+{
+	glBegin(GL_QUADS);
+	glColor4f(1.0,1.0,0.5,0.8);
+	glVertex3f(90,-25,-50.001);
+	glVertex3f(75,-25,-50.001);
+	glVertex3f(75,22,-50.001);
+	glVertex3f(90,22,-50.001);
+	glEnd();
+
+}
+
+
 void tampil(void)
 {
 	GLUquadricObj *obj = gluNewQuadric();
@@ -61,8 +76,8 @@ void tampil(void)
 	glBegin(GL_QUADS);
 	glColor3f(0.4, 0.4, 0.4);
 	glVertex3f(45.0, 10.0, 15.001);
-	glVertex3f(45.0, 9.0, 19.001);
-	glVertex3f(95.0, 9.0, 19.001);
+	glVertex3f(45.0, 10.0, 19.001);
+	glVertex3f(95.0, 10.0, 19.001);
 	glVertex3f(95.0, 10.0, 15.001);
 	glEnd();
 
@@ -78,16 +93,16 @@ void tampil(void)
 
 	glBegin(GL_QUADS);
 	glColor4f(1.0,1.0,0.5,0.8);
-	glVertex3f(-10.0, 24, 15.001);
+	glVertex3f(-10.0, 25, 15.001);
 	glVertex3f(-10.0, -25.0, 15.001);
 	glVertex3f(-30.0, -25.0, 15.001);
-	glVertex3f(-30.0, 24, 15.001);
+	glVertex3f(-30.0, 25, 15.001);
 	glEnd();
 	glBegin(GL_QUADS);
 	glColor4f(1.0,1.0,0.5,0.8);
 	glVertex3f(-10.0, 25, 15.001);
-	glVertex3f(-10.0, 23, 18.001);
-	glVertex3f(-30.0, 23, 18.001);
+	glVertex3f(-10.0, 25, 18.001);
+	glVertex3f(-30.0, 25, 18.001);
 	glVertex3f(-30.0, 25, 15.001);
 	glEnd();
 
@@ -100,20 +115,20 @@ void tampil(void)
 	glBegin(GL_QUADS);
 	glColor3f(0.1,0.4,0.6);
 	glVertex3f(-40.0, 25, 15.001);
-	glVertex3f(-40.0, 22, 20.001);
-	glVertex3f(-51.0, 22, 20.001);
+	glVertex3f(-40.0, 25, 20.001);
+	glVertex3f(-51.0, 25, 20.001);
 	glVertex3f(-51.0, 25, 15.001);
 	glBegin(GL_QUADS);
 	glColor3f(0.1,0.4,0.6);
 	glVertex3f(-52.0, 25, 15.001);
-	glVertex3f(-52.0, 22, 20.001);
-	glVertex3f(-62.0, 22, 20.001);
+	glVertex3f(-52.0, 25, 20.001);
+	glVertex3f(-62.0, 25, 20.001);
 	glVertex3f(-62.0, 25, 15.001);
 	glBegin(GL_QUADS);
 	glColor3f(0.1,0.4,0.6);
 	glVertex3f(-63.0, 25, 15.001);
-	glVertex3f(-63.0, 22, 20.001);
-	glVertex3f(-75.0, 22, 20.001);
+	glVertex3f(-63.0, 25, 20.001);
+	glVertex3f(-75.0, 25, 20.001);
 	glVertex3f(-75.0, 25, 15.001);
 	glBegin(GL_QUADS);
 	glColor3f(0.1,0.4,0.6);
@@ -143,7 +158,39 @@ void tampil(void)
 	glEnd();
 
 	//jendela kiri
-
+	glPushMatrix();
+	jendelakiri();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-20,0,0);
+	jendelakiri();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-40,0,0);
+	jendelakiri();
+	glPopMatrix();
+	glBegin(GL_QUADS);
+	glColor4f(1.0,1.0,0.5,0.8);
+	glVertex3f(25,-25,-50.001);
+	glVertex3f(0,-25,-50.001);
+	glVertex3f(0,22,-50.001);
+	glVertex3f(25,22,-50.001);
+	glEnd();
+	glBegin(GL_QUADS);
+	glColor4f(1.0,1.0,0.5,0.8);
+	glVertex3f(-5,-25,-50.001);
+	glVertex3f(-25,-25,-50.001);
+	glVertex3f(-25,22,-50.001);
+	glVertex3f(-5,22,-50.001);
+	glEnd();
+	glBegin(GL_QUADS);
+	glColor4f(1.0,1.0,0.5,0.8);
+	glVertex3f(-35,-25,-50.001);
+	glVertex3f(-55,-25,-50.001);
+	glVertex3f(-55,22,-50.001);
+	glVertex3f(-35,22,-50.001);
+	glEnd();
+	
 	//bawah
 	glBegin(GL_QUADS);
 	glColor3f(0.6, 0.6, 0.6);
@@ -410,14 +457,14 @@ void tampil(void)
 	
 	//Desain Struktur Bangunan Atas
 	glBegin(GL_POLYGON);
-	glColor3f(1.0,1.0,0.0);
+	glColor4f(1.0,1.0,0.5,0.8);
 	glVertex3f(-30,25.002,-6);
 	glVertex3f(-50,25.002,-20);
 	glVertex3f(-50,25.002,-12);
 	glVertex3f(-30,25.002,2);
 	glEnd();
 	glBegin(GL_POLYGON);
-	glColor3f(1.0,1.0,0.0);
+	glColor4f(1.0,1.0,0.5,0.8);
 	glVertex3f(-30,25.002,-45);
 	glVertex3f(-50,25.002,-35);
 	glVertex3f(-50,25.002,-27);
@@ -426,14 +473,14 @@ void tampil(void)
 
 
 	glBegin(GL_POLYGON);
-	glColor3f(1.0,1.0,0.0);
+	glColor4f(1.0,1.0,0.5,0.8);
 	glVertex3f(0,25.002,-20);
 	glVertex3f(-20,25.002,-6);
 	glVertex3f(-20,25.002,2);
 	glVertex3f(0,25.002,-12);
 	glEnd();
 	glBegin(GL_POLYGON);
-	glColor3f(1.0,1.0,0.0);
+	glColor4f(1.0,1.0,0.5,0.8);
 	glVertex3f(0,25.002,-35);
 	glVertex3f(-20,25.002,-45);
 	glVertex3f(-20,25.002,-38);
@@ -441,14 +488,14 @@ void tampil(void)
 	glEnd();
 
 	glBegin(GL_POLYGON);
-	glColor3f(1.0,1.0,0.0);
+	glColor4f(1.0,1.0,0.5,0.8);
 	glVertex3f(50,25.002,-25);
 	glVertex3f(26,25.002,-11);
 	glVertex3f(26,25.002,-3);
 	glVertex3f(50,25.002,-17);
 	glEnd();
 	glBegin(GL_POLYGON);
-	glColor3f(1.0,1.0,0.0);
+	glColor4f(1.0,1.0,0.5,0.8);
 	glVertex3f(50,25.002,-30);
 	glVertex3f(26,25.002,-40);
 	glVertex3f(26,25.002,-33);
@@ -458,7 +505,7 @@ void tampil(void)
 
 	//segitiga atas
 	glBegin(GL_TRIANGLES);
-	glColor3f(1.0,1.0,0.0);
+	glColor4f(1.0,1.0,0.5,0.8);
 	glVertex3f(5,25.002,-23);
 	glVertex3f(25,25.002,-5);
 	glVertex3f(25,25.002,-38);
@@ -473,7 +520,7 @@ void tampil(void)
 
 	//lingkarankecil
 	glPushMatrix();
-	glColor4f (1.0,1.0,0.0,0.8);
+	glColor4f(1.0,1.0,0.5,0.8);
 	glTranslatef(-25.0,25.001,-22.0);
 	glRotatef(90,0.1,0,0);
 	glScalef(1.0,1.0,0.0);
@@ -481,7 +528,7 @@ void tampil(void)
 	glPopMatrix();
 	
 	glPushMatrix();
-	glColor4f (1.0,1.0,0.0,0.8);
+	glColor4f(1.0,1.0,0.5,0.8);
 	glTranslatef(-25.0,25.001,-43.0);
 	glRotatef(90,0.1,0,0);
 	glScalef(1.0,1.0,0.0);
@@ -489,7 +536,7 @@ void tampil(void)
 	glPopMatrix();
 	
 	glPushMatrix();
-	glColor4f (1.0,1.0,0.0,0.8);
+	glColor4f(1.0,1.0,0.5,0.8);
 	glTranslatef(-25.0,25.001,-2.0);
 	glRotatef(90,0.1,0,0);
 	glScalef(1.0,1.0,0.0);
@@ -497,7 +544,7 @@ void tampil(void)
 	glPopMatrix();
 
 	glPushMatrix();
-	glColor4f (1.0,1.0,0.0,0.8);
+	glColor4f(1.0,1.0,0.5,0.8);
 	glTranslatef(57.0,25.001,-23.0);
 	glRotatef(90,0.1,0,0);
 	glScalef(1.0,1.0,0.0);
@@ -506,7 +553,7 @@ void tampil(void)
 
 
 	glPushMatrix();
-	glColor4f (1.0,1.0,0.0,0.8);
+	glColor4f (1.0,1.0,0.5,0.8);
 	glTranslatef(85.0,25.001,-15.0);
 	glRotatef(90,0.1,0,0);
 	glScalef(1.0,1.0,0.0);
@@ -514,7 +561,7 @@ void tampil(void)
 	glPopMatrix();
 
 	glPushMatrix();
-	glColor4f (0.1,0.4,0.6,1);
+	glColor3f (0.1,0.4,0.6);
 	glTranslatef(85.0,25.002,-15.0);
 	glRotatef(90,0.1,0,0);
 	glScalef(1.0,1.0,0.0);
@@ -522,7 +569,7 @@ void tampil(void)
 	glPopMatrix();
 
 	glPushMatrix();
-	glColor4f (1.0,1.0,0.0,0.8);
+	glColor4f (1.0,1.0,0.5,0.8);
 	glTranslatef(73.0,25.001,-5.0);
 	glRotatef(90,0.1,0,0);
 	glScalef(1.0,1.0,0.0);
@@ -530,11 +577,39 @@ void tampil(void)
 	glPopMatrix();
 
 	glPushMatrix();
-	glColor4f (0.1,0.4,0.6,1);
+	glColor3f(0.1,0.4,0.6);
 	glTranslatef(73.0,25.002,-5.0);
 	glRotatef(90,0.1,0,0);
 	glScalef(1.0,1.0,0.0);
 	glutSolidSphere(3,50,50);
+	glPopMatrix();
+
+	//Bagian Dalam Mall
+
+	//Aquarium
+	glPushMatrix();
+	glColor4f(0.4, 0.4, 1.0,0.8);
+	glTranslatef(70,0,-20);
+	glRotatef(90,0.1,0,0);
+	gluCylinder(obj,13,13,25,50,50);
+	glPopMatrix();
+	glPushMatrix();
+	glColor4f(0.4, 0.4, 1.0,0.8);
+	glTranslatef(70.0,-25.0,-20.0);
+	glRotatef(90,0.1,0,0);
+	glScalef(1.0,1.0,0.0);
+	
+	glutSolidSphere(13,50,50);
+	glPopMatrix();
+
+
+	//atas
+	glPushMatrix();
+	glColor3f(0.7, 0.7, 0.7);
+	glTranslatef(70.0,0.0,-20.0);
+	glRotatef(90,0.1,0,0);
+	glScalef(1.0,1.0,0.0);
+	glutSolidSphere(13,50,50);
 	glPopMatrix();
 
 	glutSwapBuffers();
