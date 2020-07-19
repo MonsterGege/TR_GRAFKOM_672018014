@@ -1960,7 +1960,7 @@ void tampil(void)
 	glutSolidSphere(10,50,50);
 	glPopMatrix();
 
-	//eskalator kanan
+	//eskalator1
 	glBegin(GL_QUADS);
 	glColor3f(0.6,0.6,0.6);
 	glVertex3f(40,-24.899,-8);
@@ -2027,6 +2027,84 @@ void tampil(void)
 	glVertex3f(85,-4.899,5);
 	glVertex3f(85,0,5);
 	glVertex3f(80,0,5);
+	glEnd();
+
+	//eskalator2
+	glBegin(GL_QUADS);
+	glColor3f(0.6,0.6,0.6);
+	glVertex3f(40,-5,-8);
+	glVertex3f(50,-5,-8);
+	glVertex3f(50,-5,5);
+	glVertex3f(40,-5,5);
+	glEnd();
+	glBegin(GL_QUADS);
+	glColor4f(1.0,1.0,1.0,0.8);
+	glVertex3f(40,-5,-8);
+	glVertex3f(50,-5,-8);
+	glVertex3f(50,0,-8);
+	glVertex3f(40,0,-8);
+	glEnd();
+	glBegin(GL_QUADS);
+	glColor4f(1.0,1.0,1.0,0.8);
+	glVertex3f(40,-5,5);
+	glVertex3f(50,-5,5);
+	glVertex3f(50,0,5);
+	glVertex3f(40,0,5);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.6,0.6,0.6);
+	glVertex3f(50,-5,-8);
+	glVertex3f(80,9,-8);
+	glVertex3f(80,9,5);
+	glVertex3f(50,-5,5);
+	glEnd();
+	glBegin(GL_QUADS);
+	glColor4f(1.0,1.0,1.0,0.8);
+	glVertex3f(50,-5,5);
+	glVertex3f(85,9,5);
+	glVertex3f(85,13,5);
+	glVertex3f(50,0,5);
+	glEnd();
+	glBegin(GL_QUADS);
+	glColor4f(1.0,1.0,1.0,0.8);
+	glVertex3f(50,-5,-8);
+	glVertex3f(85,9,-8);
+	glVertex3f(85,13,-8);
+	glVertex3f(50,0,-8);
+	glEnd();
+
+
+
+	glBegin(GL_QUADS);
+	glColor3f(0.6,0.6,0.6);
+	glVertex3f(80,9,-8);
+	glVertex3f(85,9,-8);
+	glVertex3f(85,9,5);
+	glVertex3f(80,9,5);
+	glEnd();
+	glBegin(GL_QUADS);
+	glColor4f(1.0,1.0,1.0,0.8);
+	glVertex3f(80,8.899,-8);
+	glVertex3f(85,8.899,-8);
+	glVertex3f(85,13,-8);
+	glVertex3f(80,13,-8);
+	glEnd();
+	glBegin(GL_QUADS);
+	glColor4f(1.0,1.0,1.0,0.8);
+	glVertex3f(80,8.899,5);
+	glVertex3f(85,8.899,5);
+	glVertex3f(85,13,5);
+	glVertex3f(80,13,5);
+	glEnd();
+
+	//tambahanlantai
+	glBegin(GL_QUADS);
+	glColor3f(0.8,0.8,0.5);
+	glVertex3f(40,-5,-8);
+	glVertex3f(25,-5,-8);
+	glVertex3f(25,-5,5);
+	glVertex3f(40,-5,5);
 	glEnd();
 
 	//Meja dan kursi
